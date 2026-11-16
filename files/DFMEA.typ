@@ -3,6 +3,7 @@
 #set text(lang: "es", size: 11pt)
 #set par(justify: true, leading: 0.7em)
 #set heading(numbering: none)
+#import "cajas.typ": cuadro-concepto, cuadro-ejemplo, cuadro-atencion, cuadro-registro
 
 // Imagen que vos colocás manualmente
 #let imagen(desc) = figure(
@@ -11,14 +12,7 @@
   ]
 )
 
-// Caja de concepto clave
-#let clave(titulo, cuerpo) = block(
-  fill: rgb("#eef6e8"),
-  stroke: (left: 3pt + rgb("#7fb241")),
-  inset: 10pt,
-  radius: 4pt,
-  width: 100%,
-)[*#titulo:* #cuerpo]
+#let clave(titulo, cuerpo) = cuadro-concepto(titulo, cuerpo)
 
 
 
@@ -51,7 +45,7 @@ La DFMEA es un *análisis sistemático del diseño* para identificar, cuantifica
 - Características críticas y especiales.
 - Acciones y documentación trazable para clientes internos o externos.
 
-#clave("Ojo")[El RPN y la criticidad *no son entradas*: son resultados del análisis.]
+#cuadro-atencion("Ojo")[El RPN y la criticidad *no son entradas*: son resultados del análisis.]
 
 *Secuencia conceptual de una fila:*
 #table(
@@ -96,7 +90,7 @@ $ "RPN" = "S" dot "O" dot "D" quad (1 <= "RPN" <= 1000) $
   [10], [Peligrosa *sin* aviso], [Extrema, > 1/2], [Incertidumbre absoluta],
 )
 
-#clave("Trampas típicas")[
+#cuadro-atencion("Trampas típicas")[
   - El RPN es un *producto*, no una suma.
   - "Mayor detectabilidad ⇒ mayor D" es *falso*: mejor detección ⇒ *menor* D.
   - No hay un umbral universal de RPN aceptable. Si una consigna pide uno, hay que declarar el criterio adoptado.
@@ -155,7 +149,7 @@ Función → Modo → Efecto → S → Causa → O → Controles → D → RPN �
 - Aparecen nuevas leyes o normas.
 - El feedback de usuarios revela un problema.
 
-#clave("Atención")[Que un integrante deje la empresa *no* es, por sí solo, motivo técnico para actualizar.]
+#cuadro-atencion("Atención")[Que un integrante deje la empresa *no* es, por sí solo, motivo técnico para actualizar.]
 
 #pagebreak()
 

@@ -6,13 +6,8 @@
 )
 
 // Caja de concepto clave
-#let clave(titulo, cuerpo) = block(
-  fill: rgb("#eef6e8"),
-  stroke: (left: 3pt + rgb("#7fb241")),
-  inset: 10pt,
-  radius: 4pt,
-  width: 100%,
-)[*#titulo:* #cuerpo]
+#import "cajas.typ": cuadro-concepto, cuadro-ejemplo, cuadro-atencion, cuadro-registro
+#let clave(titulo, cuerpo) = cuadro-concepto(titulo, cuerpo)
 
 = Manufacturabilidad: PCB y Proceso SMT
 
@@ -64,7 +59,7 @@ Los últimos tres suelen subestimarse, aunque son de igual importancia.
 + Las señales de alta velocidad deben ir en capas encerradas entre planos, que actúan como blindaje.
 + Múltiples planos de tierra reducen la impedancia de referencia y la radiación de modo común.
 
-#clave("Atención")[Con técnicas normales de construcción no hay suficiente capacitancia entre alimentación y tierra para desacoplar por encima de unos 500 MHz. Por eso, a veces hay que elegir entre el objetivo 2 y el 3, y el desacoplamiento debe resolverse por otro medio (en general se prioriza el objetivo 2).]
+#cuadro-atencion("Atención")[Con técnicas normales de construcción no hay suficiente capacitancia entre alimentación y tierra para desacoplar por encima de unos 500 MHz. Por eso, a veces hay que elegir entre el objetivo 2 y el 3, y el desacoplamiento debe resolverse por otro medio (en general se prioriza el objetivo 2).]
 
 *Nota:* una placa de 8 capas es la mínima que permite cumplir los cinco objetivos. En placas de 4 y 6 capas hay que resignar algunos.
 
@@ -269,6 +264,10 @@ Características típicas (ejemplo JU-100-5, epoxi rojo):
 
 *Ejemplo de hoja técnica:* el perfil de reflow recomendado sube de forma lineal, con una rampa de 0,6 a 2 °C/s, luego una meseta de precalentamiento, un pico de 215–245 °C por encima del punto de fusión, y un enfriamiento rápido menor a 4 °C/s para formar una estructura de grano fina.
 
+#cuadro-registro("Parámetros de referencia de reflow")[
+  Rampa de 0,6 a 2 °C/s, meseta de precalentamiento, pico de 215–245 °C y enfriamiento menor a 4 °C/s. El perfil real debe contrastarse con la hoja técnica de la pasta y los componentes.
+]
+
 === Manipulación correcta de jeringas de adhesivo
 
 - Mantener refrigerado en heladera común, nunca en freezer.
@@ -343,6 +342,10 @@ Existen hornos de mesa y hornos de alta producción.
 Se hace en hornos continuos de convección forzada o infrarrojos. Se desarrolla una curva temperatura-tiempo que une el componente SMD con la placa. Las fases son: evaporación del solvente, activación del flux, fusión de la soldadura y enfriamiento.
 
 Ejemplo de referencia: rampa de 2–4 °C/s, tiempo sobre 183 °C de 60 a 120 s, pico de temperatura de 220 °C en el cuerpo y 235 °C en los terminales.
+
+#cuadro-atencion("El perfil depende del material")[
+  Los valores de temperatura y tiempo son ejemplos: deben verificarse contra las especificaciones de la aleación, la pasta, los componentes y el horno utilizado.
+]
 
 === Curado de adhesivo
 

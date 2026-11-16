@@ -6,13 +6,8 @@
 )
 
 // Caja de concepto clave
-#let clave(titulo, cuerpo) = block(
-  fill: rgb("#eef6e8"),
-  stroke: (left: 3pt + rgb("#7fb241")),
-  inset: 10pt,
-  radius: 4pt,
-  width: 100%,
-)[*#titulo:* #cuerpo]
+#import "cajas.typ": cuadro-concepto, cuadro-ejemplo, cuadro-atencion, cuadro-registro
+#let clave(titulo, cuerpo) = cuadro-concepto(titulo, cuerpo)
 
 =  Factibilidad Económica
 
@@ -168,9 +163,11 @@ Las empresas solo producen si es más beneficioso que no producir. En general se
 
 #clave("Análisis marginal")[Se debe realizar toda actividad donde el *ingreso marginal* sea superior al *costo marginal*.]
 
-*Ejemplo:* costo total 200, costo variable 50, precio de venta 150.
-- Contabilidad tradicional: ingreso 150, egreso 200, resultado −50.
-- Análisis marginal: costos fijos 150, ingreso 150, costo variable 50. Vender tiene sentido si el mercado paga 150 de forma transitoria, porque cubre el costo variable y contribuye a los fijos.
+#cuadro-ejemplo("Análisis marginal: producir o no producir")[
+  Costo total 200, costo variable 50, precio de venta 150.
+  - *Contabilidad tradicional:* ingreso 150, egreso 200, resultado −50.
+  - *Análisis marginal:* costos fijos 150, ingreso 150, costo variable 50. Vender tiene sentido si el mercado paga 150 de forma transitoria, porque cubre el costo variable y contribuye a los fijos.
+]
 
 === Costos medios y marginales
 
@@ -192,7 +189,7 @@ Las empresas solo producen si es más beneficioso que no producir. En general se
 
 === Dos óptimos distintos
 
-#clave("No confundir")[
+#cuadro-atencion("No confundir")[
   - *CM = CMT* → mínimo del costo medio total (óptimo desde costos).
   - *IM = CM* → máximo beneficio total.
 ]
@@ -255,7 +252,7 @@ $ "VAN" = E_0 + sum_(i=1)^n "FCD"_i = E_0 + sum_(i=1)^n "FC"_i / (1 + t_i)^i $
 - *Plazos típicos:* 3 a 5 años, según ciclo de vida del producto (no es lo mismo electrónica que farmacéuticos), amortizaciones y el contexto macroeconómico.
 - Considera el costo del capital (tasa de interés) y la inflación.
 
-#clave("Criterio")[VAN > 0 es aceptable. Si el VAN está cerca de 0, el proyecto resulta poco atractivo, más aún en escenarios de incertidumbre.]
+#cuadro-atencion("Criterio de aceptación")[VAN > 0 es aceptable. Si el VAN está cerca de 0, el proyecto resulta poco atractivo, más aún en escenarios de incertidumbre.]
 
 === TRI (Tiempo de Retorno de la Inversión)
 
@@ -281,7 +278,7 @@ $ "RCBB" = (sum_(i=0)^k I_i / (1+t_i)^i) / (sum_(i=0)^k E_i / (1+t_i)^i) $
 
 $ "RCBN" = (sum_(i=0)^k (I_i - E_i) / (1+t_i)^i) / (sum_(i=0)^k E_i / (1+t_i)^i) $
 
-#clave("Criterio")[RCBB > 1 y RCBN > 0.]
+#cuadro-atencion("Criterio de aceptación")[RCBB > 1 y RCBN > 0.]
 
 === Gráfico de flujo de caja
 

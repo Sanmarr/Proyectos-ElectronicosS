@@ -6,13 +6,8 @@
 )
 
 // Caja de concepto clave
-#let clave(titulo, cuerpo) = block(
-  fill: rgb("#eef6e8"),
-  stroke: (left: 3pt + rgb("#7fb241")),
-  inset: 10pt,
-  radius: 4pt,
-  width: 100%,
-)[*#titulo:* #cuerpo]
+#import "cajas.typ": cuadro-concepto, cuadro-ejemplo, cuadro-atencion, cuadro-registro
+#let clave(titulo, cuerpo) = cuadro-concepto(titulo, cuerpo)
 
 = Ingeniería de Integración y Test
 
@@ -39,9 +34,9 @@ Un *DUT* (Device / Unit / Equipment Under Test) es lo que se prueba. Se conecta 
   caption: [Diagrama de banco de pruebas genérico]
 )
 
-*Ejemplo*: test para un sensor
-
-_Se puede usar una fuente de calor calibrada, o bien una fuente constante con un sensor calibrado. El osciloscopio y las puntas, la pantalla o USB, y la interfaz forman parte del banco. Un banco de pruebas genérico para tests automatizados combina excitación, medición, potencia, interfaz y ambiente controlado. El sensor requiere un amplio testeo previo._
+#cuadro-ejemplo("Test para un sensor")[
+  Se puede usar una fuente de calor calibrada, o bien una fuente constante con un sensor calibrado. El osciloscopio y las puntas, la pantalla o USB, y la interfaz forman parte del banco. Un banco de pruebas genérico para tests automatizados combina excitación, medición, potencia, interfaz y ambiente controlado. El sensor requiere un amplio testeo previo.
+]
 
 #figure(
   image("images/DUT2.png", width: 60%)
@@ -131,7 +126,7 @@ Se realizan en *todas las unidades* cuando hay riesgo eléctrico potencial:
 + *Banco de pruebas:* instrumentación con su error, resolución y precisión, interfaces necesarias para el DUT, desarrollos especiales y modos de prueba del DUT.
 + *Setup:* accesorios, facilidades y entorno necesarios (temperatura, humedad, conexiones de red, cables con largos y conectores definidos).
 
-#clave("Ejemplo de referencia")[En un banco de pruebas real (como el de un sistema óptico), la descripción incluye PC de control, fuentes, paneles, placas de conexión y cableado, con muchos más detalles que el esquema.]
+#cuadro-ejemplo("Ejemplo de referencia")[En un banco de pruebas real (como el de un sistema óptico), la descripción incluye PC de control, fuentes, paneles, placas de conexión y cableado, con muchos más detalles que el esquema.]
 
 == Precondiciones y postcondiciones
 
@@ -149,7 +144,7 @@ Cada prueba debe tener:
 - *Criterios de aceptación:* definidos *antes* de la prueba, indicando qué resultados se esperan y qué se considera aprobado o rechazado.
 - *Precondiciones y postcondiciones.*
 
-#clave("Estructura típica")[ID | Objetivo / Requisito | Banco / entorno | Precondiciones | Procedimiento | Criterio PASS/FAIL | Postcondiciones]
+#cuadro-registro("Estructura típica")[ID | Objetivo / Requisito | Banco / entorno | Precondiciones | Procedimiento | Criterio PASS/FAIL | Postcondiciones]
 
 #figure(
   image("images/TestID.png", width: 100%),
