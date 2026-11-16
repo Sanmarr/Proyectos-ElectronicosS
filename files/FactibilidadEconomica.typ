@@ -37,9 +37,15 @@ El *análisis de factibilidad* estudia si es posible (y si conviene) desarrollar
 - *Empresas nuevas (plan fundacional):* el análisis suele basarse en la *tasa de retorno*, con decisiones centradas en inversores y accionistas.
 - *Proyectos dentro de empresas existentes:* se combinan comparaciones de tasa de retorno con la idea de *valor agregado*, que considera también el interés de la propia empresa.
 
-#clave("Valor agregado")[Valor agregado = valor de los productos − valor de los productos y servicios comprados. La aceptación de un proyecto se basa en su valor agregado y en la posición competitiva de la empresa a largo plazo.]
+#clave("Valor agregado")[Valor agregado = valor de los productos − valor de los productos y servicios comprados. 
 
-#imagen("Diagrama: Factibilidad económica dentro del análisis de factibilidad (tecnológica, tiempos, legal, económica)")
+La aceptación de un proyecto se basa en su valor agregado y en la posición competitiva de la empresa a largo plazo.]
+
+#figure(
+  image("images/arenas.png", width: 80%)
+)
+
+//#imagen("Diagrama: Factibilidad económica dentro del análisis de factibilidad (tecnológica, tiempos, legal, económica)")
 
 == Costo objetivo
 
@@ -94,6 +100,11 @@ La escala afecta a todos los costos:
 - *SAM (Served Addressable Market):* hasta dónde podemos "atender"; depende de los recursos de la empresa (por ejemplo, canales).
 - *SOM (Served Objective Market):* quiénes son los compradores hoy.
 
+#figure(
+  image("images/SOM.png", width: 80%),
+  caption: [Niveles de mercado]
+)
+
 *Estimaciones básicas:* PBI per cápita, nivel de ingresos medios, etc.
 
 *Del potencial al objetivo:*
@@ -115,11 +126,16 @@ Mide, para un momento dado, la cantidad de producto que puede comprarse según s
 
 Mide la variación porcentual de la demanda en función de la variación porcentual del precio.
 
-$ E = ((d Q) / (d Q)) / ((d P) / (d P)) $
+$ E = ((d Q) / (Q)) / ((d P) / (P)) $
 
 - $|E| > 1$: demanda *elástica*.
 - $|E| < 1$: demanda *inelástica*.
 - $|E| = 1$: elasticidad unitaria.
+
+#figure(
+  image("images/demanda.png", width: 70%),
+  caption: [Elasticidad]
+)
 
 *Competencia perfecta:* el precio lo fija el mercado (la empresa es tomadora de precios). En consumo masivo, por encima de cierto precio la cantidad cae abruptamente; esto es barrera de entrada para players sin escala.
 
@@ -131,7 +147,12 @@ Todo producto tiene un ciclo: introducción, crecimiento, madurez y declive, has
 
 *Adopción de nuevos productos (Moore):* innovadores ~2,5%, early adopters ~13,5%, early majority ~34%, late majority ~34%, laggards ~16%.
 
-#imagen("Curva de ciclo de vida del producto: introducción, crecimiento, madurez, declive; y curva de adopción de Moore")
+//#imagen("Curva de ciclo de vida del producto: introducción, crecimiento, madurez, declive; y curva de adopción de Moore")
+
+#figure(
+  image("images/CicloDeVida.png", width: 60%),
+  caption: [Curva de ciclo de vida del producto]
+)
 
 ==  Precio de venta
 
@@ -194,7 +215,24 @@ Los costos fijos son hundidos en la decisión de corto plazo.
 
 Cuando una innovación da una ventaja de costos, el precio de mercado puede quedar por encima del costo medio, y la empresa maximiza beneficios produciendo donde IM = CM.
 
-#imagen("Gráficos de equilibrio: precio de mercado, CMg, CMe, IM, punto de cierre y punto de nivelación")
+//#imagen("Gráficos de equilibrio: precio de mercado, CMg, CMe, IM, punto de cierre y punto de nivelación")
+
+#figure(
+  image("images/Curvas.png", width: 100%)
+)
+
+#figure(
+  image("images/Curvas2.png", width: 100%)
+)
+
+#figure(
+  image("images/Curvas3.png", width: 100%)
+)
+
+#figure(
+  image("images/Curvas4.png", width: 90%)
+)
+
 
 = Rentabilidad
 
@@ -249,7 +287,12 @@ $ "RCBN" = (sum_(i=0)^k (I_i - E_i) / (1+t_i)^i) / (sum_(i=0)^k E_i / (1+t_i)^i)
 
 El flujo de caja acumulado tiene una etapa de *desarrollo* (inversión, flujo negativo) y una de *producción* (flujo positivo). El TRI es el punto donde el flujo acumulado cruza cero. Según la tasa de interés usada, la curva cambia: con tasa cero (valor contable) se recupera antes; con tasa igual a la TIR, el beneficio final es nulo.
 
-#imagen("Gráfico de flujo de caja acumulado vs. tiempo, con curvas para tasa cero, tasa de mercado y tasa igual a TIR, marcando desarrollo, producción, TRI y beneficio neto Bn")
+//#imagen("Gráfico de flujo de caja acumulado vs. tiempo, con curvas para tasa cero, tasa de mercado y tasa igual a TIR, marcando desarrollo, producción, TRI y beneficio neto Bn")
+
+#figure(
+  image("images/FlujoDeCajas.png", width: 90%)
+)
+
 
 /*
 #v(1em)

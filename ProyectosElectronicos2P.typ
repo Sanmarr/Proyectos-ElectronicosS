@@ -10,7 +10,7 @@
   lang: "es",
   region: "AR",
   size: 10pt,
-  font: "Inter" //Inter, Liberation Sans, Gentium, 
+  font: "Liberation Sans" //Inter, Liberation Sans, Gentium, 
 )
  
 // Configuración de página con encabezado y pie estilizado
@@ -122,7 +122,7 @@
 #pagebreak()
 #include "files/DFMEA.typ"
 
-#pagebreak()
+//#pagebreak()
 #include "files/FactibilidadEconomica.typ"
 
 #pagebreak()

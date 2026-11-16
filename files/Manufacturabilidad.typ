@@ -70,7 +70,10 @@ Los últimos tres suelen subestimarse, aunque son de igual importancia.
 
 == Stackup en placas de 4 capas
 
-Configuración típica: Señal – Tierra – Alimentación – Señal.
+#figure(
+  image("images/4capas.png", width:30%)
+)
+
 
 - Cumple solo el objetivo 1.
 - Los planos están separados entre sí y las señales están lejos de su plano de retorno.
@@ -80,7 +83,15 @@ Configuración típica: Señal – Tierra – Alimentación – Señal.
 
 Un stackup que *no* conviene: dos capas de señal no adyacentes a ningún plano, y planos que no protegen las señales.
 
-Configuración más común: Pads/baja frecuencia – Tierra – Alta frecuencia – Alta frecuencia – Alimentación – Baja frecuencia.
+#figure(
+  image("images/6capas.png", width:30%),
+  caption: [No conviene: dos capas de señal no adyacentes a ningún plano, y planos que no protegen las señales.]
+)
+
+#figure(
+  image("images/6capas.png", width:30%),
+  caption: [Conviene: dos capas de señal adyacentes a planos, y planos que protegen las señales.]
+)
 
 - Dos capas encerradas para señales rápidas, y dos superficiales para señales lentas.
 - Cumple los objetivos 1, 2 y 4, pero no el 3 ni el 5.
@@ -90,16 +101,22 @@ Configuración más común: Pads/baja frecuencia – Tierra – Alta frecuencia 
 
 Permite cumplir los cinco objetivos. Suele usarse para mejorar EMC más que para agregar capas de ruteo. El costo adicional frente a 6 capas es proporcionalmente menor que el de pasar de 4 a 6.
 
-*Configuración recomendada:* Pads – Alimentación – Tierra – Alta frecuencia – Alta frecuencia – Tierra – Alimentación – Baja frecuencia.
+#figure(
+  image("images/8capas.png", width:45%)
+)
 
 - Todas las capas de señal son adyacentes a un plano.
 - Las señales rápidas quedan encerradas entre planos.
 - Hay múltiples planos de tierra.
 - Cuando una señal de alta frecuencia cambia de capa, conviene agregar una vía entre los dos planos de tierra cerca del cambio.
 
-*Alternativa:* Pads – Tierra – H1 – Gnd – V1 – H2 – Alimentación – V2 – Pads. Todas las capas de ruteo quedan encerradas y blindadas, y las señales ortogonales quedan adyacentes al mismo plano.
+*Alternativa:* Todas las capas de ruteo quedan encerradas y blindadas, y las señales ortogonales quedan adyacentes al mismo plano.
 
-#clave("Para repasar")[Si se necesitan seis capas de ruteo, usar una placa de 10 capas, no una de 8.]
+#figure(
+  image("images/8capas2.png", width:35%)
+)
+
+
 
 #pagebreak()
 

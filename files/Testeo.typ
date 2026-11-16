@@ -32,11 +32,20 @@ Un *DUT* (Device / Unit / Equipment Under Test) es lo que se prueba. Se conecta 
   - El resultado debe ser *repetible*: el ambiente debe controlarse.
 ]
 
-#imagen("Diagrama de banco de pruebas genérico: Interfaz, Excitación, DUT, Medición, Interfaz, Alimentación y Ambiente")
+//#imagen("Diagrama de banco de pruebas genérico: Interfaz, Excitación, DUT, Medición, Interfaz, Alimentación y Ambiente")
 
-== Ejemplo: test para un sensor
+#figure(
+  image("images/DUT.png", width: 90%),
+  caption: [Diagrama de banco de pruebas genérico]
+)
 
-Se puede usar una fuente de calor calibrada, o bien una fuente constante con un sensor calibrado. El osciloscopio y las puntas, la pantalla o USB, y la interfaz forman parte del banco. Un banco de pruebas genérico para tests automatizados combina excitación, medición, potencia, interfaz y ambiente controlado. El sensor requiere un amplio testeo previo.
+*Ejemplo*: test para un sensor
+
+_Se puede usar una fuente de calor calibrada, o bien una fuente constante con un sensor calibrado. El osciloscopio y las puntas, la pantalla o USB, y la interfaz forman parte del banco. Un banco de pruebas genérico para tests automatizados combina excitación, medición, potencia, interfaz y ambiente controlado. El sensor requiere un amplio testeo previo._
+
+#figure(
+  image("images/DUT2.png", width: 60%)
+)
 
 == Pruebas de caja negra y caja blanca
 
@@ -67,6 +76,10 @@ Relaciona cada etapa de diseño con su validación:
 - Diseño de alto nivel → Validación de (sub)módulos y de sistema.
 - Diseño detallado → Validación de (sub)módulos.
 - Implementación en la base del modelo.
+
+#figure(
+  image("images/ModeloV.png", width: 60%)
+)
 
 == Tipos de pruebas
 
@@ -138,7 +151,14 @@ Cada prueba debe tener:
 
 #clave("Estructura típica")[ID | Objetivo / Requisito | Banco / entorno | Precondiciones | Procedimiento | Criterio PASS/FAIL | Postcondiciones]
 
-#imagen("Ejemplo de tabla de descripción de prueba con Test ID, descripción, procedimiento, criterio y OK/NOK")
+#figure(
+  image("images/TestID.png", width: 100%),
+  caption: [Ejemplo de tabla de descripción de prueba]
+)
+
+//#imagen("Ejemplo de tabla de descripción de prueba con Test ID, descripción, procedimiento, criterio y OK/NOK")
+
+
 
 == DFT y BIST
 
@@ -164,4 +184,9 @@ Permite verificar que todos los requerimientos se cumplan y mantiene unida la do
 
 #clave("Utilidad")[Si cada requerimiento tiene una verificación (inspección, documentación de diseño, simulación o prueba), la matriz demuestra que nada quedó sin validar.]
 
-#imagen("Ejemplo de matriz de trazabilidad con filas de requerimientos POW01 y SEN01 y sus columnas de especificación, objetivo, test y resultado")
+//#imagen("Ejemplo de matriz de trazabilidad con filas de requerimientos POW01 y SEN01 y sus columnas de especificación, objetivo, test y resultado")
+
+#figure(
+  image("images/Matriz.png", width: 100%),
+  caption: [Ejemplo de matriz de trazabilidad]
+)

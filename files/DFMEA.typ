@@ -136,7 +136,12 @@ Estas condiciones dependen de S y O, *no de D*.
 
 #clave("Prioridad")[Atacar primero los ítems con *RPN más alto*.]
 
-#imagen("Formulario DFMEA completo: columnas Función, Modo de falla, Efecto, S, Causa, O, Controles, D, RPN, Acciones")
+//#imagen("Formulario DFMEA completo: columnas Función, Modo de falla, Efecto, S, Causa, O, Controles, D, RPN, Acciones")
+
+#figure(
+  image("images/FMEA.png", width: 100%),
+  caption: [Formulario DFMEA completo]
+)
 
 == Tabla típica y actualización
 
